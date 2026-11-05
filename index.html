@@ -1,0 +1,360 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Aman Bhatt — Websites for local businesses in Dehradun</title>
+<meta name="description" content="I build simple, good-looking websites that bring local businesses more customers. Live in about a week.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700;12..96,800&family=Figtree:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --bg:#0e0d0b; --card:#181613; --line:rgba(255,255,255,.09);
+  --text:#f4efe5; --muted:#a39e92; --amber:#f2a83b; --amber-d:#c98418; --wa:#25d366;
+  --pad:clamp(1.25rem,5vw,4rem);
+}
+html{scroll-behavior:smooth}
+body{background:var(--bg);color:var(--text);font:400 1.0625rem/1.65 'Figtree',system-ui,sans-serif;overflow-x:hidden;-webkit-font-smoothing:antialiased}
+h1,h2,h3{font-family:'Bricolage Grotesque',sans-serif;line-height:1.05;letter-spacing:-.025em}
+a{color:inherit}
+:focus-visible{outline:2px solid var(--amber);outline-offset:3px}
+.wrap{max-width:1180px;margin:0 auto;padding:0 var(--pad)}
+section{padding:clamp(4rem,9vw,7.5rem) 0}
+
+/* nav */
+nav{position:sticky;top:0;z-index:50;background:rgba(14,13,11,.85);backdrop-filter:blur(14px);border-bottom:1px solid var(--line)}
+nav .wrap{display:flex;align-items:center;justify-content:space-between;height:64px}
+.logo{font:800 1.2rem 'Bricolage Grotesque',sans-serif;text-decoration:none;color:var(--amber)}
+.nav-links{display:flex;gap:1.75rem;align-items:center}
+.nav-links a{text-decoration:none;color:var(--muted);font-size:.95rem;transition:color .2s}
+.nav-links a:hover{color:var(--text)}
+
+/* buttons */
+.btn{display:inline-flex;align-items:center;gap:.6rem;font:600 1rem 'Figtree',sans-serif;text-decoration:none;padding:.9rem 1.6rem;border-radius:999px;transition:transform .2s,box-shadow .2s,background .2s;border:1px solid transparent;cursor:pointer}
+.btn-wa{background:var(--wa);color:#06260f}
+.btn-wa:hover{transform:translateY(-2px);box-shadow:0 10px 30px rgba(37,211,102,.28)}
+.btn-line{border-color:var(--line);color:var(--text)}
+.btn-line:hover{border-color:var(--amber);color:var(--amber)}
+.btn-sm{padding:.55rem 1.1rem;font-size:.9rem}
+.btn svg{width:20px;height:20px;flex:none}
+
+/* hero */
+.hero{padding-top:clamp(3rem,7vw,6rem);padding-bottom:clamp(3rem,7vw,5rem);position:relative;overflow:hidden}
+.hero::before{content:"";position:absolute;right:-12%;top:-10%;width:60vw;height:60vw;max-width:760px;max-height:760px;background:radial-gradient(circle,rgba(242,168,59,.16),transparent 65%);pointer-events:none}
+.hero-grid{display:grid;grid-template-columns:1.15fr .85fr;gap:clamp(2rem,5vw,5rem);align-items:center;position:relative}
+.status{display:inline-flex;align-items:center;gap:.6rem;font-size:.92rem;color:var(--muted);border:1px solid var(--line);border-radius:999px;padding:.4rem 1rem;margin-bottom:1.75rem}
+.status i{width:8px;height:8px;border-radius:50%;background:var(--wa);box-shadow:0 0 0 0 rgba(37,211,102,.6);animation:ping 2s infinite}
+@keyframes ping{70%{box-shadow:0 0 0 9px rgba(37,211,102,0)}100%{box-shadow:0 0 0 0 rgba(37,211,102,0)}}
+h1{font-size:clamp(2.7rem,6.6vw,5.6rem);font-weight:800;margin-bottom:1.5rem}
+h1 em{font-style:normal;color:var(--amber)}
+.lead{font-size:clamp(1.05rem,1.7vw,1.25rem);color:var(--muted);max-width:34rem;margin-bottom:2.25rem}
+.lead b{color:var(--text);font-weight:500}
+.cta-row{display:flex;flex-wrap:wrap;gap:.9rem}
+.proof{display:flex;flex-wrap:wrap;gap:1.5rem 2.5rem;margin-top:2.75rem;padding-top:1.75rem;border-top:1px solid var(--line)}
+.proof div{font-size:.9rem;color:var(--muted);line-height:1.35}
+.proof strong{display:block;font:700 1.7rem 'Bricolage Grotesque',sans-serif;color:var(--text)}
+
+/* browser mock */
+.mock{position:relative;background:var(--card);border:1px solid var(--line);border-radius:16px;overflow:hidden;box-shadow:0 30px 80px rgba(0,0,0,.55);transform:rotate(2deg);animation:rise .9s cubic-bezier(.2,.7,.2,1) both}
+@keyframes rise{from{opacity:0;transform:translateY(40px)}to{opacity:1;transform:none}}
+.bar{display:flex;gap:6px;align-items:center;padding:.7rem .9rem;border-bottom:1px solid var(--line);background:#12100e}
+.bar span{width:10px;height:10px;border-radius:50%;background:#3a352d}
+.bar small{margin-left:.6rem;color:var(--muted);font-size:.78rem;background:#0e0d0b;padding:.15rem .8rem;border-radius:999px}
+.shot{aspect-ratio:16/10;background:linear-gradient(135deg,#2a2218,#171513);display:grid;place-items:center;position:relative;overflow:hidden}
+.shot img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:top}
+.shot .ph{color:var(--muted);font-size:.85rem;text-align:center;padding:1rem}
+
+
+/* hero portrait */
+.portrait{position:relative;width:100%;max-width:470px;aspect-ratio:4/5;justify-self:center;animation:rise .9s cubic-bezier(.2,.7,.2,1) both}
+.portrait::before{content:"";position:absolute;inset:6% 2% 0;background:radial-gradient(circle at 50% 42%,rgba(242,168,59,.42),rgba(242,168,59,.10) 52%,transparent 72%);filter:blur(42px);animation:breathe 5s ease-in-out infinite alternate}
+.portrait img{position:relative;display:block;width:100%;height:100%;object-fit:cover;object-position:top center;filter:grayscale(1) contrast(1.08) brightness(.86);-webkit-mask-image:linear-gradient(to bottom,#000 68%,transparent 100%);mask-image:linear-gradient(to bottom,#000 68%,transparent 100%)}
+@keyframes breathe{from{opacity:.6;transform:scale(.97)}to{opacity:1;transform:scale(1.03)}}
+
+/* section heads */
+.head{max-width:40rem;margin-bottom:clamp(2rem,5vw,3.5rem)}
+.head h2{font-size:clamp(2rem,4.6vw,3.4rem);font-weight:800;margin-bottom:.9rem}
+.head p{color:var(--muted)}
+
+/* what you get */
+.get{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--line);border:1px solid var(--line);border-radius:20px;overflow:hidden}
+.get div{background:var(--bg);padding:2rem}
+.get h3{font-size:1.35rem;margin-bottom:.6rem;font-weight:700}
+.get p{color:var(--muted);font-size:1rem}
+.get .ic{font-size:1.6rem;margin-bottom:1rem;display:block}
+
+/* work */
+#work{background:#12110f;border-block:1px solid var(--line)}
+.work-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem}
+.proj{background:var(--card);border:1px solid var(--line);border-radius:20px;overflow:hidden;display:flex;flex-direction:column;transition:border-color .25s}
+.proj:hover{border-color:rgba(242,168,59,.45)}
+.proj .shot{aspect-ratio:16/10;border-bottom:1px solid var(--line)}
+.proj-body{padding:1.5rem 1.5rem 1.75rem;display:flex;flex-direction:column;gap:.7rem;flex:1}
+.kind{font-size:.85rem;color:var(--amber);font-weight:500}
+.proj h3{font-size:1.5rem;font-weight:700}
+.proj p{color:var(--muted);font-size:.98rem}
+.points{list-style:none;display:grid;gap:.4rem;margin:.3rem 0 .6rem;font-size:.94rem}
+.points li{padding-left:1.4rem;position:relative}
+.points li::before{content:"";position:absolute;left:0;top:.55em;width:.6rem;height:.35rem;border-left:2px solid var(--amber);border-bottom:2px solid var(--amber);transform:rotate(-45deg) translateY(-30%)}
+.proj-foot{margin-top:auto;display:flex;flex-wrap:wrap;gap:.6rem;align-items:center}
+.story{font-size:.9rem;color:var(--muted)}
+.story:hover{color:var(--amber)}
+.proj.big{grid-column:1/-1;display:grid;grid-template-columns:1.1fr 1fr}
+.proj.big .shot{aspect-ratio:auto;min-height:340px;border-bottom:0;border-right:1px solid var(--line)}
+.proj.big .proj-body{padding:clamp(1.5rem,3.5vw,3rem);justify-content:center}
+.proj.big h3{font-size:clamp(1.9rem,3.2vw,2.6rem)}
+.tag-live{align-self:flex-start;font-size:.8rem;color:#9be08b;background:rgba(120,200,90,.12);border:1px solid rgba(120,200,90,.3);padding:.2rem .75rem;border-radius:999px}
+
+/* steps */
+.steps{display:grid;grid-template-columns:repeat(4,1fr);gap:1.5rem;counter-reset:s}
+.step{counter-increment:s;border-top:2px solid var(--line);padding-top:1.25rem;transition:border-color .25s}
+.step:hover{border-color:var(--amber)}
+.step::before{content:counter(s);font:800 2.6rem 'Bricolage Grotesque',sans-serif;color:var(--amber);line-height:1}
+.step h3{font-size:1.25rem;margin:.6rem 0 .4rem;font-weight:700}
+.step p{color:var(--muted);font-size:.97rem}
+
+/* about */
+.about{display:grid;grid-template-columns:1fr;gap:clamp(2rem,6vw,5rem);align-items:center}
+.me{aspect-ratio:4/5;max-width:380px;border-radius:24px;background:linear-gradient(160deg,#3a2a12,#171513);border:1px solid var(--line);overflow:hidden;position:relative;display:grid;place-items:center;color:var(--muted);font-size:.85rem}
+.me img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.about p{color:var(--muted);margin-bottom:1rem;max-width:38rem}
+.about p b{color:var(--text);font-weight:500}
+.tools{display:flex;flex-wrap:wrap;gap:.6rem;margin-top:1.5rem}
+.tools span{font-size:.9rem;border:1px solid var(--line);border-radius:999px;padding:.35rem .95rem;color:var(--muted)}
+
+/* contact */
+#contact{text-align:center;position:relative;overflow:hidden}
+#contact::before{content:"";position:absolute;left:50%;top:50%;width:700px;height:360px;transform:translate(-50%,-50%);background:radial-gradient(ellipse,rgba(242,168,59,.14),transparent 70%);pointer-events:none}
+#contact .wrap{position:relative}
+#contact h2{font-size:clamp(2.4rem,7vw,5.2rem);font-weight:800;margin-bottom:1.1rem}
+#contact p{color:var(--muted);max-width:34rem;margin:0 auto 2.25rem}
+#contact .cta-row{justify-content:center}
+.direct{margin-top:1.75rem;font-size:.95rem;color:var(--muted)}
+.direct a{color:var(--text)}
+
+footer{border-top:1px solid var(--line);padding:1.75rem 0;font-size:.88rem;color:var(--muted)}
+footer .wrap{display:flex;flex-wrap:wrap;gap:.75rem 2rem;justify-content:space-between}
+
+/* mobile sticky bar */
+.sticky{display:none}
+
+@media (max-width:900px){
+  .hero-grid,.about{grid-template-columns:1fr}
+  .portrait{max-width:340px}
+  .get,.steps{grid-template-columns:1fr 1fr}
+  .work-grid{grid-template-columns:1fr 1fr}
+  .proj.big{grid-template-columns:1fr}
+  .proj.big .shot{min-height:0;aspect-ratio:16/10;border-right:0;border-bottom:1px solid var(--line)}
+  .me{max-width:280px}
+}
+@media (max-width:620px){
+  body{font-size:1rem}
+  .nav-links a:not(.btn){display:none}
+  .get,.steps,.work-grid{grid-template-columns:1fr}
+  .cta-row .btn{flex:1 1 100%;justify-content:center}
+  .proof{gap:1.25rem 1.75rem}
+  body{padding-bottom:76px}
+  .sticky{display:flex;position:fixed;left:0;right:0;bottom:0;z-index:60;gap:.6rem;padding:.7rem 1rem calc(.7rem + env(safe-area-inset-bottom,0px));background:rgba(14,13,11,.92);backdrop-filter:blur(12px);border-top:1px solid var(--line)}
+  .sticky .btn{flex:1;justify-content:center;padding:.8rem}
+}
+@media (prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  *{animation:none!important;transition:none!important}
+}
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="wrap">
+    <a href="#top" class="logo">Aman Bhatt</a>
+    <div class="nav-links">
+      <a href="#work">My work</a>
+      <a href="#how">How it works</a>
+      <a href="#about">About</a>
+      <a class="btn btn-wa btn-sm" href="https://wa.me/91XXXXXXXXXX?text=Hi%20Aman%2C%20I%20saw%20your%20portfolio%20and%20I%27d%20like%20a%20website%20for%20my%20business." target="_blank" rel="noopener">WhatsApp me</a>
+    </div>
+  </div>
+</nav>
+
+<main id="top">
+<!-- HERO -->
+<section class="hero">
+  <div class="wrap hero-grid">
+    <div>
+      <div class="status"><i></i>Taking on new projects this month</div>
+      <h1>A website that brings you <em>real customers.</em></h1>
+      <p class="lead">I help local businesses in Dehradun get online with a clean, fast website. <b>You tell me about your business, I handle everything else</b> — design, setup and launch, usually in about a week.</p>
+      <div class="cta-row">
+        <a class="btn btn-wa" href="https://wa.me/91XXXXXXXXXX?text=Hi%20Aman%2C%20I%20saw%20your%20portfolio%20and%20I%27d%20like%20a%20website%20for%20my%20business." target="_blank" rel="noopener">
+          Chat on WhatsApp
+        </a>
+        <a class="btn btn-line" href="#work">See my work</a>
+      </div>
+      <div class="proof">
+        <div><strong>5–7 days</strong>from first chat to launch</div>
+        <div><strong>4</strong>websites built and live</div>
+        <div><strong>Real orders</strong>running on my online store</div>
+      </div>
+    </div>
+    <div class="portrait">
+      <img src="images/Aman.png" alt="Aman Bhatt" onerror="this.remove()">
+    </div>
+  </div>
+</section>
+
+<!-- WHAT YOU GET -->
+<section>
+  <div class="wrap">
+    <div class="head">
+      <h2>What your business gets</h2>
+      <p>No jargon, no surprises. Here is what you can expect when we work together.</p>
+    </div>
+    <div class="get">
+      <div><span class="ic">📱</span><h3>Looks great on every phone</h3><p>Most of your customers will find you on their phone. Your site will be fast and easy to use there.</p></div>
+      <div><span class="ic">💬</span><h3>Customers can reach you instantly</h3><p>Call, WhatsApp and map buttons right on the page, so a visitor becomes an enquiry in one tap.</p></div>
+      <div><span class="ic">🛒</span><h3>Sell or take bookings online</h3><p>Want to sell products, collect payments or take bookings? I can set that up, with a simple page where you manage everything yourself.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- WORK -->
+<section id="work">
+  <div class="wrap">
+    <div class="head">
+      <h2>Websites I have built</h2>
+      <p>Click any of them to try it yourself. These are real, working websites.</p>
+    </div>
+    <div class="work-grid">
+
+      <article class="proj big">
+        <div class="shot"><img src="images/whimsy-wishes.jpg" alt="Whimsy Wishes online store" loading="lazy" onerror="this.remove()"><div class="ph">Add images/whimsy-wishes.jpg</div></div>
+        <div class="proj-body">
+          <span class="tag-live">Live and taking orders</span>
+          <span class="kind">Online store</span>
+          <h3>Whimsy Wishes</h3>
+          <p>A handmade gifts store with its own online shop. I built it alone from scratch, and customers now order and pay on it every day.</p>
+          <ul class="points">
+            <li>Customers pay online with UPI and cards</li>
+            <li>Order emails sent automatically</li>
+            <li>The owner adds and updates products without help</li>
+          </ul>
+          <div class="proj-foot">
+            <a class="btn btn-wa btn-sm" href="https://whimsywishes.in" target="_blank" rel="noopener">Visit the live store</a>
+            <a class="story" href="details/whimsy-wishes.html">Read the story</a>
+          </div>
+        </div>
+      </article>
+
+      <article class="proj">
+        <div class="shot"><img src="images/s-collections.jpg" alt="S Collections clothing store" loading="lazy" onerror="this.remove()"><div class="ph">Add images/s-collections.jpg</div></div>
+        <div class="proj-body">
+          <span class="kind">Clothing store</span>
+          <h3>S Collections</h3>
+          <p>An online catalogue and shop for a local women's clothing store, built together with a design partner.</p>
+          <ul class="points">
+            <li>Products and categories that are easy to browse</li>
+            <li>Smooth shopping on mobile</li>
+          </ul>
+          <div class="proj-foot">
+            <a class="btn btn-line btn-sm" href="https://s-collection-demo.vercel.app/" target="_blank" rel="noopener">Open demo</a>
+            <a class="story" href="details/s-collections.html">Read the story</a>
+          </div>
+        </div>
+      </article>
+
+      <article class="proj">
+        <div class="shot"><img src="images/darken-shadows.jpg" alt="Darken Shadows swimming academy" loading="lazy" onerror="this.remove()"><div class="ph">Add images/darken-shadows.jpg</div></div>
+        <div class="proj-body">
+          <span class="kind">Class booking</span>
+          <h3>Darken Shadows</h3>
+          <p>A swimming academy website where families pick a program and book, and the team manages every class in one place.</p>
+          <ul class="points">
+            <li>Separate logins for owner, coaches and members</li>
+            <li>Online enrolment, no phone calls needed</li>
+          </ul>
+          <div class="proj-foot">
+            <a class="btn btn-line btn-sm" href="https://dark-demo-livid.vercel.app/" target="_blank" rel="noopener">Open demo</a>
+            <a class="story" href="details/darken-shadows.html">Read the story</a>
+          </div>
+        </div>
+      </article>
+
+      <article class="proj">
+        <div class="shot"><img src="images/blazeplus.jpg" alt="BlazePlus company directory" loading="lazy" onerror="this.remove()"><div class="ph">Add images/blazeplus.jpg</div></div>
+        <div class="proj-body">
+          <span class="kind">Company team portal</span>
+          <h3>BlazePlus</h3>
+          <p>A private space for a company's staff to find each other, request contact details and chat by department.</p>
+          <ul class="points">
+            <li>New members are approved by an admin first</li>
+            <li>Live team chat with photo and PDF sharing</li>
+          </ul>
+          <div class="proj-foot">
+            <a class="btn btn-line btn-sm" href="https://blaze-plus-demo.vercel.app/login.html" target="_blank" rel="noopener">Open demo</a>
+            <a class="story" href="details/blazeplus.html">Read the story</a>
+          </div>
+        </div>
+      </article>
+
+    </div>
+  </div>
+</section>
+
+<!-- HOW -->
+<section id="how">
+  <div class="wrap">
+    <div class="head">
+      <h2>How we work together</h2>
+      <p>Four simple steps. You always know what is happening and what comes next.</p>
+    </div>
+    <div class="steps">
+      <div class="step"><h3>We talk</h3><p>A quick chat on WhatsApp or in person about your business and what you need.</p></div>
+      <div class="step"><h3>You approve</h3><p>I share the price and plan. Work starts once the advance is paid.</p></div>
+      <div class="step"><h3>I build it</h3><p>You see progress along the way and can ask for changes.</p></div>
+      <div class="step"><h3>You go live</h3><p>I launch it, show you how it works and stay around for questions.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section id="about" style="background:#12110f;border-top:1px solid var(--line)">
+  <div class="wrap about">
+    <div>
+      <div class="head" style="margin-bottom:1.25rem"><h2>Hi, I'm Aman</h2></div>
+      <p>I'm a web developer based in <b>Dehradun</b>. I design, build and test websites, so the things I hand over are checked and ready to use.</p>
+      <p>My first website, <b>Whimsy Wishes</b>, took me months to build from scratch. Today it takes real orders. That taught me what matters to a business owner: a site that works, is simple to manage and helps you get customers.</p>
+      <p>I work with local businesses and startups, in person in Dehradun or remotely anywhere in India.</p>
+      <div class="tools"><span>Website design</span><span>Online payments</span><span>Order and booking systems</span><span>Admin pages you can manage</span><span>Testing before launch</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact">
+  <div class="wrap">
+    <h2>Let's get your business online.</h2>
+    <p>Tell me what you do. I'll reply the same day with ideas and a clear price.</p>
+    <div class="cta-row">
+      <a class="btn btn-wa" href="https://wa.me/91XXXXXXXXXX?text=Hi%20Aman%2C%20I%20saw%20your%20portfolio%20and%20I%27d%20like%20a%20website%20for%20my%20business." target="_blank" rel="noopener">Chat on WhatsApp</a>
+      <a class="btn btn-line" href="tel:+91XXXXXXXXXX">Call me</a>
+      <a class="btn btn-line" href="mailto:amanbhattx3@gmail.com">Email</a>
+    </div>
+    <p class="direct">Or find me on <a href="https://www.linkedin.com/in/aman-bhatt-81191335a/" target="_blank" rel="noopener">LinkedIn</a> and <a href="https://github.com/AmanBhattx3" target="_blank" rel="noopener">GitHub</a>.</p>
+  </div>
+</section>
+</main>
+
+<footer>
+  <div class="wrap"><span>© 2026 Aman Bhatt</span><span>Dehradun, Uttarakhand · Available across India</span></div>
+</footer>
+
+<div class="sticky">
+  <a class="btn btn-wa" href="https://wa.me/91XXXXXXXXXX?text=Hi%20Aman%2C%20I%20saw%20your%20portfolio%20and%20I%27d%20like%20a%20website%20for%20my%20business." target="_blank" rel="noopener">WhatsApp</a>
+  <a class="btn btn-line" href="tel:+91XXXXXXXXXX">Call</a>
+</div>
+
+</body>
+</html>
