@@ -35,6 +35,9 @@ nav .wrap{display:flex;align-items:center;justify-content:space-between;height:6
 .btn{display:inline-flex;align-items:center;gap:.6rem;font:600 1rem 'Figtree',sans-serif;text-decoration:none;padding:.9rem 1.6rem;border-radius:999px;transition:transform .2s,box-shadow .2s,background .2s;border:1px solid transparent;cursor:pointer}
 .btn-wa{background:var(--wa);color:#06260f}
 .btn-wa:hover{transform:translateY(-2px);box-shadow:0 10px 30px rgba(37,211,102,.28)}
+.btn-amber{background:var(--amber);color:#1a1205}
+.btn-amber:hover{transform:translateY(-2px);box-shadow:0 10px 30px rgba(242,168,59,.28)}
+.nav-links a.btn-wa{color:#06260f}
 .btn-line{border-color:var(--line);color:var(--text)}
 .btn-line:hover{border-color:var(--amber);color:var(--amber)}
 .btn-sm{padding:.55rem 1.1rem;font-size:.9rem}
@@ -157,6 +160,8 @@ footer .wrap{display:flex;flex-wrap:wrap;gap:.75rem 2rem;justify-content:space-b
 @media (max-width:620px){
   body{font-size:1rem}
   .nav-links a:not(.btn){display:none}
+  .wa-desk{display:none!important}
+  .hero-work{background:var(--amber);border-color:var(--amber);color:#1a1205;justify-content:center}
   .get,.steps,.work-grid{grid-template-columns:1fr}
   .cta-row .btn{flex:1 1 100%;justify-content:center}
   .proof{gap:1.25rem 1.75rem}
@@ -179,7 +184,7 @@ footer .wrap{display:flex;flex-wrap:wrap;gap:.75rem 2rem;justify-content:space-b
       <a href="#work">My work</a>
       <a href="#how">How it works</a>
       <a href="#about">About</a>
-      <a class="btn btn-wa btn-sm" href="https://wa.me/91XXXXXXXXXX?text=Hi%20Aman%2C%20I%20saw%20your%20portfolio%20and%20I%27d%20like%20a%20website%20for%20my%20business." target="_blank" rel="noopener">WhatsApp me</a>
+      <a class="btn btn-wa btn-sm wa-desk" href="https://wa.me/916397650080?text=Hi%20Aman%2C%20I%20saw%20your%20portfolio%20and%20I%27d%20like%20a%20website%20for%20my%20business." target="_blank" rel="noopener">WhatsApp me</a>
     </div>
   </div>
 </nav>
@@ -193,10 +198,10 @@ footer .wrap{display:flex;flex-wrap:wrap;gap:.75rem 2rem;justify-content:space-b
       <h1>A website that brings you <em>real customers.</em></h1>
       <p class="lead">I help local businesses in Dehradun get online with a clean, fast website. <b>You tell me about your business, I handle everything else</b> — design, setup and launch, usually in about a week.</p>
       <div class="cta-row">
-        <a class="btn btn-wa" href="https://wa.me/91XXXXXXXXXX?text=Hi%20Aman%2C%20I%20saw%20your%20portfolio%20and%20I%27d%20like%20a%20website%20for%20my%20business." target="_blank" rel="noopener">
+        <a class="btn btn-wa wa-desk" href="https://wa.me/916397650080?text=Hi%20Aman%2C%20I%20saw%20your%20portfolio%20and%20I%27d%20like%20a%20website%20for%20my%20business." target="_blank" rel="noopener">
           Chat on WhatsApp
         </a>
-        <a class="btn btn-line" href="#work">See my work</a>
+        <a class="btn btn-line hero-work" href="#work">See my work</a>
       </div>
       <div class="proof">
         <div><strong>5–7 days</strong>from first chat to launch</div>
@@ -247,7 +252,7 @@ footer .wrap{display:flex;flex-wrap:wrap;gap:.75rem 2rem;justify-content:space-b
             <li>The owner adds and updates products without help</li>
           </ul>
           <div class="proj-foot">
-            <a class="btn btn-wa btn-sm" href="https://whimsywishes.in" target="_blank" rel="noopener">Visit the live store</a>
+            <a class="btn btn-amber btn-sm" href="https://whimsywishes.in" target="_blank" rel="noopener">Visit the live store</a>
             <a class="story" href="details/whimsy-wishes.html">Read the story</a>
           </div>
         </div>
@@ -343,11 +348,11 @@ footer .wrap{display:flex;flex-wrap:wrap;gap:.75rem 2rem;justify-content:space-b
     <h2>Let's get your business online.</h2>
     <p>Tell me what you do. I'll reply the same day with ideas and a clear price.</p>
     <div class="cta-row">
-      <a class="btn btn-wa" href="https://wa.me/916397650080?text=Hi%20Aman%2C%20I%20saw%20your%20portfolio%20and%20I%27d%20like%20a%20website%20for%20my%20business." target="_blank" rel="noopener">Chat on WhatsApp</a>
-      <a class="btn btn-line" href="tel:+916397650080">Call me</a>
-      <a class="btn btn-line" href="mailto:amanbhattx3@gmail.com">Email</a>
+      <a class="btn btn-wa wa-desk" href="https://wa.me/916397650080?text=Hi%20Aman%2C%20I%20saw%20your%20portfolio%20and%20I%27d%20like%20a%20website%20for%20my%20business." target="_blank" rel="noopener">Chat on WhatsApp</a>
+      <a class="btn btn-line wa-desk" href="tel:+916397650080">Call me</a>
+      <a class="btn btn-line" id="mailBtn" href="mailto:amanbhattx3@gmail.com?subject=Website%20enquiry">Email</a>
     </div>
-    <p class="direct">Or find me on <a href="https://www.linkedin.com/in/aman-bhatt-81191335a/" target="_blank" rel="noopener">LinkedIn</a> and <a href="https://github.com/AmanBhattx3" target="_blank" rel="noopener">GitHub</a>.</p>
+    <p class="direct">Email: <a href="mailto:amanbhattx3@gmail.com">amanbhattx3@gmail.com</a><br>Or find me on <a href="https://www.linkedin.com/in/aman-bhatt-81191335a/" target="_blank" rel="noopener">LinkedIn</a> and <a href="https://github.com/AmanBhattx3" target="_blank" rel="noopener">GitHub</a>.</p>
   </div>
 </section>
 </main>
@@ -361,5 +366,13 @@ footer .wrap{display:flex;flex-wrap:wrap;gap:.75rem 2rem;justify-content:space-b
   <a class="btn btn-line" href="tel:+916397650080">Call</a>
 </div>
 
+<script>
+document.getElementById('mailBtn').addEventListener('click',function(e){
+  if(matchMedia('(pointer:coarse)').matches)return; /* phones: use the mail app */
+  e.preventDefault();
+  var u='https://mail.google.com/mail/?view=cm&fs=1&to=amanbhattx3@gmail.com&su='+encodeURIComponent('Website enquiry')+'&body='+encodeURIComponent("Hi Aman,\n\nI saw your portfolio and I'd like a website for my business.\n");
+  window.open(u,'_blank','noopener');
+});
+</script>
 </body>
 </html>
