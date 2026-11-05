@@ -70,7 +70,8 @@ h1 em{font-style:normal;color:var(--amber)}
 /* hero portrait */
 .portrait{position:relative;width:100%;max-width:470px;aspect-ratio:4/5;justify-self:center;animation:rise .9s cubic-bezier(.2,.7,.2,1) both}
 .portrait::before{content:"";position:absolute;inset:6% 2% 0;background:radial-gradient(circle at 50% 42%,rgba(242,168,59,.42),rgba(242,168,59,.10) 52%,transparent 72%);filter:blur(42px);animation:breathe 5s ease-in-out infinite alternate}
-.portrait img{position:relative;display:block;width:100%;height:100%;object-fit:cover;object-position:top center;filter:grayscale(1) contrast(1.08) brightness(.86);-webkit-mask-image:linear-gradient(to bottom,#000 68%,transparent 100%);mask-image:linear-gradient(to bottom,#000 68%,transparent 100%)}
+.portrait picture{display:block;position:relative;width:100%;height:100%}
+.portrait img{position:relative;display:block;width:100%;height:100%;object-fit:cover;object-position:top center;filter:brightness(.95) contrast(1.05) drop-shadow(0 0 26px rgba(242,168,59,.22));-webkit-mask-image:linear-gradient(to bottom,#000 68%,transparent 100%);mask-image:linear-gradient(to bottom,#000 68%,transparent 100%)}
 @keyframes breathe{from{opacity:.6;transform:scale(.97)}to{opacity:1;transform:scale(1.03)}}
 
 /* section heads */
@@ -200,7 +201,7 @@ footer .wrap{display:flex;flex-wrap:wrap;gap:.75rem 2rem;justify-content:space-b
       </div>
     </div>
     <div class="portrait">
-      <img src="images/Aman.png" alt="Aman Bhatt" onerror="this.remove()">
+      <picture><source srcset="images/Aman.webp" type="image/webp"><img src="images/Aman.png" alt="Aman Bhatt" width="900" height="1149" fetchpriority="high" onerror="this.remove()"></picture>
     </div>
   </div>
 </section>
